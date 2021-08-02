@@ -1,0 +1,166 @@
+<html lang="en">
+<head>
+  <!-- Copyright -->
+  <title>Personal Website</title>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" href="mystyle.css"> <!-- An External CSS File -->
+  
+</head>
+
+<body id="dtPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">		
+    <div class="collapse navbar-collapse" id="dtNavbar">
+      <ul class="nav navbar-nav navbar-right"> 
+        <li class="active"><a href="#about">About</a></li>
+        <li class=""><a href="#experience">Experience</a></li>
+        <li class=""><a href="#blogs">Blogs</a></li>
+		<li class=""><a href="#links">Links</a></li>
+      </ul>
+    </div>	
+  </div>
+</nav>
+
+<div class="jumbotron text-center bg-black-blue">
+  <h1>Sample Website</h1> 
+</div>
+
+<!-- About Section -->
+<div id="about" class="container-fluid">
+  <div class="row slideanim slide">
+    <div class="col-sm-1">
+      <span class=""></span>
+    </div>
+	
+	<div class="col-sm-8">
+      <h2>About</h2>
+      <h4>This personal website is used to summary of experience and write blogs.</h4>
+    </div> 
+  </div>
+</div>
+
+<!-- Services Section -->
+<div id="experience" class="container-fluid text-center bg-grey">
+ <h2>Experience</h2>  
+ <div class="row slideanim slide"> 
+    <div class="col-sm-6">
+      <span class="glyphicon glyphicon-folder-open logo-small"></span>
+      <h4>Development</h4>
+	  <p> Designed, coded, tested, and deployed software, databases, GUI, and web applications 
+		  using OOP, UML, Visio, Visual Studio, IDE, C, C++, C#, Java, Python, SQL, JavaScript, Bootstrap, HTML5, CSS3, jQuery...</p>
+    </div> 
+	
+	<div class="col-sm-6">
+      <span class="glyphicon glyphicon-ok logo-small"></span>
+      <h4>QA and Test</h4>
+	  <p>Performed automated and manual QA and test for products. <br> 
+	     Analyzed, created, and executed test plans and test cases to meet products quality and standards. Debugged root cause and resolved issues. <br> 
+	     Designed and implemented automation test software/scripts using C, SQL, Bash/Shell Scripting, Python, Unix/Linux, Jenkins...</p>
+    </div>
+ </div> 
+ <br><br>
+</div>
+
+<div id="blogs" class="container-fluid">
+  <h2 class="text-center"></h2>
+  <div class="row">
+    <div class="col-sm-1">
+      <div class="row">
+      </div>
+    </div>
+	
+	<div class="col-sm-8 slideanim">
+	  <h2>Blogs</h2>
+		Sample SQL Query:<br><br>
+
+		/* Create stored procedures to select first name, last name, and DOB: */ <br>
+
+		CREATE PROCEDURE ListCustomer AS <br>
+		BEGIN <br>
+		SELECT fname, lname, DOB <br>
+		FROM Customers<br>
+		ORDER BY fname <br>
+		END; <br>
+		<br>
+		/* DECLARE @return_value int <br>
+		EXEC @return_value = [dbo].[ListCustomer] <br>
+		SELECT 'Return Value' = @return_value */ <br> 
+    </div>	
+  </div>
+</div>
+
+<div id="links" class="container-fluid-contact bg-grey">
+    <div class="row slideanim slide">
+	<div class="col-sm-2">
+    </div>
+	
+	<div class="col-sm-4">			
+		<div class="vertical-menu">
+		<p></p><h4>Personal Website</h4><p></p>
+		<a href="index.html">About</a> <br>
+		</div>
+	</div>
+	
+	<div class="col-sm-4">	
+	<div class="vertical-menu">
+		<p></p><h4>Links</h4><p></p>
+		<a href="https://www.oit.edu/">Oregon Institue of Technolgy</a> <br>
+		<a href="https://www.aiuniv.edu/">American InterContinental University</a> <br>
+		</div>
+	</div>
+	
+	<div class="col-sm-2">
+    </div>
+	
+ </div>	
+</div>
+
+<footer class="container-fluid-footer text-center bg-black-grey">
+  <p> © All Rights Reserved.</p>
+</footer>
+
+<script>
+$(document).ready(function()
+{
+  $(".navbar a, footer a[href='#qatPage']").on('click', function(event) 
+  {
+    if (this.hash !== "") 
+	{
+	  event.preventDefault();
+
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 955, function(){
+   
+        window.location.hash = hash;
+      });
+    } 
+  });
+  
+  $(window).scroll(function() 
+  {
+    $(".slideanim").each(function()
+	{
+	  var position = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (position < winTop + 666) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body></html>
